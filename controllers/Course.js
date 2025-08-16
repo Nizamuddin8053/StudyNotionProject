@@ -27,6 +27,7 @@ exports.createCourse = async(req,res)=>{
 
         const userId = req.user.id;
         const instructorDetails = await User.findById(userId);
+        // TOdo: Verify that user.id and instructorDetails._id are same or difFerent
 
         if(!instructorDetails){
             return res.status(404).json({
